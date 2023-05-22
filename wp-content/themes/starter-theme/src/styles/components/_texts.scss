@@ -1,0 +1,51 @@
+.o-section__title {
+  position: relative;
+  @include font-size(34px, 45px);
+  font-family: $roboto-slab;
+  font-weight: 400;
+  padding-bottom: 14px;
+  margin: 0 0 25px 0;
+  text-align: center;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $orange-600;
+    width: 44px;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  @include mq(md) {
+    @include font-size(40px, 53px);
+  }
+
+  @include mq(lg) {
+    text-align: left;
+
+    &::after {
+      margin: unset;
+    }
+  }
+}
+
+.o-section__text {
+  font-family: $catamaran;
+  @include font-size(20px, 130%);
+  font-weight: 400;
+  color: $gray-200;
+  margin: 18px 0 0 0;
+  text-align: center;
+
+  @include mq(md) {
+    text-align: left;
+    @include font-size(24px, 130%);
+  }
+
+  @include mq(lg) {
+    text-align: left;
+    @include font-size(20px, 130%);
+  }
+}

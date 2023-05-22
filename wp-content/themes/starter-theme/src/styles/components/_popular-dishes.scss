@@ -1,0 +1,115 @@
+.c-section--popular-dishes {
+  @include mq(md) {
+    padding: 8px 34px;
+  }
+
+  .c-popular-dishes__header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    flex-direction: column;
+
+    @include mq(lg) {
+      margin-bottom: 50px;
+      flex-direction: row;
+    }
+
+    .c-popular-dishes__slide-number {
+      font-family: $catamaran;
+      font-weight: 400;
+      @include font-size(24px, 1.625);
+      display: flex;
+      gap: 40px;
+      // margin-bottom: 10px;
+      align-items: center;
+      justify-content: center;
+
+      padding-top: 30px;
+
+      @include mq(md) {
+        margin-bottom: 50px;
+      }
+
+      @include mq(lg) {
+        margin-bottom: 0;
+        padding: 15px 0 0 0;
+        align-items: start;
+      }
+    }
+  }
+}
+
+.c-popular-dishes__image {
+  @include mq(lg) {
+    width: 55%;
+  }
+  img {
+    width: 100%;
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.c-popular-dishes__content {
+  padding-top: 40px;
+  text-align: center;
+
+  @include mq(md) {
+    text-align: left;
+  }
+
+    @include mq(lg) {
+    padding: 0 0 0 40px;
+    width: 45%;
+  }
+
+  .c-popular-dishes__title {
+    font-family: $roboto-slab;
+    font-weight: 400;
+    @include font-size(32px, 42px);
+    margin: 0 0 24px 0;
+  }
+  .c-popular-dishes__description {
+    font-family: $catamaran;
+    font-weight: 400;
+    @include font-size(20px, 130%);
+    color: $gray-200;
+    margin: 0 0 24px 0;
+  }
+  .c-popular-dishes__price {
+    font-family: $catamaran;
+    font-weight: 500;
+    @include font-size(28px, 42px);
+    margin: 0 0 15px 0;
+  }
+}
+
+.c-popular-dishes__slide {
+  width: 100%;
+  margin-right: 2em;
+
+  &:not(:first-child) {
+    // display: none;
+  }
+
+  @include mq(lg) {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+.c-popular-dishes__slider {
+  overflow: hidden;
+  @include mq(lg) {
+    width: 100%;
+  }
+}
+
+.c-popular-dishes__slide-number--content {
+  user-select: none;
+  .active {
+    color: $orange-500;
+  }
+}

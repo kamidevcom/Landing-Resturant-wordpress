@@ -1,14 +1,40 @@
 body,
 html {
-  font-family: $lato;
+  font-family: $catamaran;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  color: #000;
-  background: #fff;
+  color: #fff;
+  background: #000;
 }
+
+*{
+  box-sizing: border-box;
+  outline: none;
+}
+
 .main {
   background-color: #fff;
+}
+
+.c-section {
+  border: 1px solid $gray-500;
+  background-color: $gray-900;
+  // padding: 104px;
+
+  padding: 64px 24px;
+  border-color: $gray-500 #0000;
+  
+  @include mq(md) {
+    border-color: $gray-500;
+    padding: 88px 40px !important;
+  }
+  
+  @include mq(lg) {
+    border-color: $gray-500;
+    padding: 104px 104px !important;
+  }
 }

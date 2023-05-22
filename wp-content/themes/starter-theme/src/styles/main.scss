@@ -1,23 +1,23 @@
 // TOOLS
-@import '../../node_modules/normalize.css/normalize';
-@import 'tools/_mq';
-@import 'tools/tools.aliases';
+@import "../../node_modules/normalize.css/normalize";
+@import "tools/_mq";
+@import "tools/tools.aliases";
 
 // SETTINGS
-@import 'settings/_settings.global';
-@import 'settings/_mq';
-@import 'settings/_fonts.scss';
+@import "settings/_settings.global";
+@import "settings/_mq";
+@import "settings/_fonts.scss";
 
 // ELEMENTS
-@import 'elements/_var.scss';
-@import 'elements/_ie.scss';
-@import 'elements/_defaults.scss';
-@import 'elements/_misc.scss';
+@import "elements/_var.scss";
+@import "elements/_ie.scss";
+@import "elements/_defaults.scss";
+@import "elements/_misc.scss";
 
 // OBJECTS
 //
-@import 'objects/_row.scss';
-@import 'objects/_section.scss';
+@import "objects/_row.scss";
+@import "objects/_section.scss";
 
 // COMPONENTS
 //
@@ -25,15 +25,18 @@
 //----------------------------------*\
 // Components
 //----------------------------------*/
-@import 'components/_section.scss';
-@import 'components/_button.scss';
-@import 'components/_link.scss';
-
-
+@import "components/_section.scss";
+@import "components/_button.scss";
+@import "components/_link.scss";
+@import "components/_why-us";
+@import "components/_texts";
+@import "components/_our-menu";
+@import "components/_tab";
+@import "components/_popular-dishes";
 
 // PARTIALS
-@import 'partials/_header.scss';
-@import 'partials/_footer.scss';
+@import "partials/_header.scss";
+@import "partials/_footer.scss";
 
 // UTILITIES
-@import 'utilities/_flex.scss';
+@import "utilities/_flex.scss";

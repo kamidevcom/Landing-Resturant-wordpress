@@ -1,0 +1,153 @@
+header{
+  overflow: hidden;
+  position: relative;
+}
+
+.c-section--hero {
+  background-image: url("../../images/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  color: #fff;
+  .c-hero {
+    padding-top: 180px;
+    max-width: 584px;
+    margin: auto;
+    
+    @include mq(md) {
+    padding-top: 350px;
+    }
+
+    .c-hero__title {
+      font-family: $roboto-slab;
+      @include font-size(35px, 120%);
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 700;
+
+      @include mq(md) {
+        @include font-size(52px, 120%);
+      }
+    }
+
+    .c-hero__description {
+      @include font-size(22px, 36px);
+      text-align: center;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .c-hero__btn-group {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      padding: 70px 0;
+      gap: 16px;
+      width: 220px;
+      margin: auto;
+      @include mq(md) {
+        flex-direction: row;
+        gap: 20px;
+        padding: 70px;
+        width: 100%;
+      }
+      @include mq(md) {
+        gap: 40px;
+      }
+    }
+  }
+}
+
+.c-navbar {
+  position: absolute;
+  width: 100%;
+  padding: 24px;
+  @include mq(md) {
+    padding: 64px;
+  }
+  .c-navbar--container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mq(md) {
+      flex-direction: column;
+      gap: 40px;
+    }
+    @include mq(lg) {
+      
+      flex-direction: row;
+    }
+    .u-link {
+      .c-navbar__logo {
+        height: 78px;
+        @include mq(md) {
+          height: 130px;
+        }
+      }
+    }
+    .o-navbar {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      width: 100%;
+      margin: 0;
+      top: 0;
+      left: 100%;
+      list-style: none;
+      background-image: linear-gradient(70deg,#000,#000d);
+      padding: 0 64px;
+      gap: 20px;
+      transition: .5s;
+      &.is-open{
+        left: 0;
+      }
+      @include mq(md) {
+        display: flex;
+        position: relative;
+        background-color: transparent;
+        gap: 40px;
+        height: unset;
+        flex-direction: row;
+        left: 0;
+        background-image: unset;
+        li {
+          &.current-menu-item {
+            border-bottom: 1px solid $orange-500;
+          }
+
+          &.current-menu-item a {
+            color: #fff !important;
+          }
+        }
+      }
+      @include mq(lg) {
+        justify-content: end;
+        padding: 0;
+      }
+
+      li {
+        a {
+          display: inline-block;
+          padding: 7px 0;
+          @include font-size(22px, 36px);
+          white-space: nowrap;
+        }
+
+        &.current-menu-item a {
+          color: $orange-500;
+        }
+      }
+    }
+    .c-navbar__sandwich {
+      position: absolute;
+      right: 24px;
+
+      @include mq(md) {
+        display: none;
+      }
+    }
+  }
+}

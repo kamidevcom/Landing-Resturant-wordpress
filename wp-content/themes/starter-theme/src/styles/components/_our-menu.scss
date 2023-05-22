@@ -1,0 +1,7 @@
+.c-section--our-menu {
+  padding: 64px 0;
+
+  @include mq(md) {
+    padding: 64px 34px;
+  }
+}

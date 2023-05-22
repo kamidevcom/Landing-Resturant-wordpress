@@ -1,0 +1,203 @@
+.c-tab {
+  .c-tab--wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    width: 100%;
+
+    flex-direction: column;
+
+    @include mq(lg) {
+      flex-direction: row;
+    }
+
+    .c-tab__items {
+      font-family: $catamaran;
+      @include font-size(24px, 1.625);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      font-weight: 300;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+
+      flex-direction: column;
+
+      @include mq(md) {
+        flex-direction: row;
+        gap: 38px;
+      }
+
+      & li {
+        border-bottom: 1px dashed $white;
+        @include font-size(24px, 39px);
+        font-weight: 300;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      & li.is-active {
+        color: $orange-500;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.c-our-menu {
+  .c-our-menu__list {
+    width: 100%;
+    .c-tab__content {
+      display: none;
+      width: 100%;
+
+      &.is-active {
+        transition: all 1s ease;
+        animation: fadeIn 1s;
+        display: block;
+      }
+
+      .c-our-menu__item {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        &:not(:last-child) {
+          padding: 0 0 1.5em;
+          margin: 0 0 2em;
+          border-bottom: 1px solid $gray-800;
+        }
+
+        @include mq(md) {
+          flex-direction: row;
+          text-align: left;
+          align-items: end;
+        }
+
+        .c-our-menu__item-head {
+          .c-title {
+            // @include font-size(22px, 29px);
+            font-family: $roboto-slab;
+            margin: 0 0 13px 0;
+            font-weight: 400;
+
+            @include font-size(24px, 32px);
+            @include mq(md) {
+              @include font-size(26px, 34px);
+            }
+          }
+          .c-text {
+            // @include font-size(18px, 30px);
+            font-family: $catamaran;
+            color: $gray-400;
+            font-weight: 400;
+
+            @include font-size(21px, 140%);
+            margin: 0 0 15px 0;
+
+            @include mq(md) {
+              margin: 0;
+              @include font-size(22px, 140%);
+            }
+          }
+        }
+        .c-price {
+          // @include font-size(22px, 36px);
+          font-family: $catamaran;
+          color: $gray-450;
+
+          @include font-size(26px, 43px);
+        }
+      }
+    }
+  }
+}
+
+.c-hamburger {
+  position: relative;
+  z-index: 1;
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.c-hamburger__checkbox {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+.c-hamburger__icon {
+  display: block;
+  width: 34px;
+  height: 4px;
+  margin: 0 0 5px auto;
+  position: relative;
+  background: #fff;
+  z-index: 1;
+  transform-origin: 9px -4px;
+  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+.c-hamburger__icon:nth-last-child(1) {
+  margin-bottom: 0;
+}
+
+.c-hamburger__checkbox:checked ~ .c-hamburger__icon {
+  opacity: 1;
+  transform: rotate(45deg) translate(6px, -3px);
+  height: 2px;
+}
+
+.c-hamburger__checkbox:checked ~ .c-hamburger__icon:nth-last-child(2) {
+  opacity: 0;
+  transform: rotate(0) translate(0, 0);
+}
+
+.c-hamburger__checkbox:checked ~ .c-hamburger__icon:nth-last-child(1) {
+  transform: rotate(-45deg) translate(0, -1px);
+  height: 2px;
+}
+
+.c-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  overflow: auto;
+  transform-origin: 0 0;
+  transform: translate(100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.85) 100%);
+
+  @include mq(md) {
+    width: auto;
+    min-height: auto;
+    position: relative;
+    display: block;
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+  }
+}
+
+.c-nav.is-open {
+  transform: translate(0, 0);
+}

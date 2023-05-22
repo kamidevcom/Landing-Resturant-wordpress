@@ -1,0 +1,17 @@
+.c-btn {
+  @include font-size(22px,36px);
+  border-radius: $global-radius;
+  font-weight: 500px;
+  padding: 9px 49px;
+  border: none;
+}
+
+.c-btn--primary {
+  background-color: $orange-600;
+  color: #fff;
+}
+
+.c-btn--secondary {
+  background-color: $gray-700;
+  color: #fff;
+}
