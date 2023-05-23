@@ -87,119 +87,73 @@
             </ul>
           </div>
           <div class="c-our-menu__list">
+            <!-- Starter list -->
             <div class="c-tab__content js-our-menu__list is-active">
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Pork Wontons</h5>
-                  <p class="c-text">
-                    Pork, chestnuts, bamboo shoots, spring onion egg, wonton
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Dim Sums</h5>
-                  <p class="c-text">
-                    Chestnuts, mushroom, spring onion, ginger, coriander
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Real Kung Pao chicken</h5>
-                  <p class="c-text">
-                    Peanuts, chicken tights, rice wine, cornflour, soy sauce, chillies
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Stir Fried Tofu with Rice</h5>
-                  <p class="c-text">
-                    Tofu, rice, vinger, soy sauce, seasmae oil, ginger
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
+              <?php
+              $rows = get_field('strater');
+              // var_dump($rows);
+              if ($rows) {
+                foreach ($rows as $row) {
+              ?>
+                  <div class="c-our-menu__item">
+                    <div class="c-our-menu__item-head">
+                      <h5 class="c-title"><?php echo $row['title']; ?></h5>
+                      <p class="c-text">
+                        <?php echo $row['ingredients']; ?>
+                      </p>
+                    </div>
+                    <span class="c-price">$<?php echo $row['price']; ?></span>
+                  </div>
+              <?php
+                }
+              }
+              ?>
             </div>
+
+            <!-- Main Dishes list -->
             <div class="c-tab__content js-our-menu__list">
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Stir Fried Tofu with Rice</h5>
-                  <p class="c-text">
-                    Tofu, rice, vinger, soy sauce, seasmae oil, ginger
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Chinese pepper steak</h5>
-                  <p class="c-text">
-                    Steak, pepper, vinger wine, ginger
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Chicken with Chestnuts</h5>
-                  <p class="c-text">
-                    Chicken, chestnuts, soy sauce, vinger
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Honey Walnut Shrimp</h5>
-                  <p class="c-text">
-                    Wulnuts, mayonnaise, prawns, honey, egg, rice flour
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
+              <?php
+              $rows = get_field('main_dishes');
+              // var_dump($rows);
+              if ($rows) {
+                foreach ($rows as $row) {
+              ?>
+                  <div class="c-our-menu__item">
+                    <div class="c-our-menu__item-head">
+                      <h5 class="c-title"><?php echo $row['title']; ?></h5>
+                      <p class="c-text">
+                        <?php echo $row['ingredients']; ?>
+                      </p>
+                    </div>
+                    <span class="c-price">$<?php echo $row['price']; ?></span>
+                  </div>
+              <?php
+                }
+              }
+              ?>
             </div>
+
+            <!-- Dessert list -->
             <div class="c-tab__content js-our-menu__list">
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Kung Pao chicken</h5>
-                  <p class="c-text">
-                    Chicken tights, shaoxing wine, soy sauce, chilli, peanuts, cucumber
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Tsao's chicken</h5>
-                  <p class="c-text">
-                    Chicken tights, rice vinger, rice wine, orange zest, banana ketchup, garlic
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Chinese Steamed Halibut</h5>
-                  <p class="c-text">
-                    Fillet halibut, ginger, coriander, soy sauce
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
-              <div class="c-our-menu__item">
-                <div class="c-our-menu__item-head">
-                  <h5 class="c-title">Dim Sums</h5>
-                  <p class="c-text">
-                    Chestnuts, mushroom, spring onion, ginger, coriander
-                  </p>
-                </div>
-                <span class="c-price">$35</span>
-              </div>
+              <?php
+              $rows = get_field('desserts');
+              // var_dump($rows);
+              if ($rows) {
+                foreach ($rows as $row) {
+              ?>
+                  <div class="c-our-menu__item">
+                    <div class="c-our-menu__item-head">
+                      <h5 class="c-title"><?php echo $row['title']; ?></h5>
+                      <p class="c-text">
+                        <?php echo $row['ingredients']; ?>
+                      </p>
+                    </div>
+                    <span class="c-price">$<?php echo $row['price']; ?></span>
+                  </div>
+              <?php
+                }
+              }
+              ?>
             </div>
           </div>
         </div>
@@ -224,7 +178,7 @@
             </svg>
           </div>
           <div class="c-popular-dishes__slide-number--content">
-            <span class="active">1</span> / <span>3</span>
+            <span class="active">1</span> / <span><?php count(get_field('popular_dishes_slider')); ?></span>
           </div>
           <div class="c-popular-dishes__slide-number--next js-popular-dishes--next">
             <svg width="37" height="16" viewBox="0 0 37 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -235,71 +189,35 @@
       </div>
       <div class="c-popular-dishes__slider js-popular-dishes">
 
-        <div class="c-popular-dishes__slide">
-          <div class="c-popular-dishes__image">
-            <img src="<?php echo get_theme_file_uri('/assets/images/food.jpg') ?>" alt="popular dishes">
-          </div>
-          <div class="c-popular-dishes__content">
-            <h5 class="c-popular-dishes__title">
-              Sweet and sour pork
-            </h5>
-            <p class="c-popular-dishes__description">
-              Sweet and Sour Pork Tenderloin is one of the classic cuisines in China. Pork tenderloin is the
-              main
-              material of this dish.
-            </p>
-            <p class="c-popular-dishes__description">
-              The dish tastes sour and sweet, but also crispy outside and soft inside, which can stimulate
-              people’s appetite.
-            </p>
-            <span class="c-popular-dishes__price">$36</span>
-          </div>
-        </div>
-
-        <div class="c-popular-dishes__slide">
-          <div class="c-popular-dishes__image">
-            <img src="<?php echo get_theme_file_uri('/assets/images/food.jpg') ?>" alt="popular dishes">
-          </div>
-          <div class="c-popular-dishes__content">
-            <h5 class="c-popular-dishes__title">
-              Sweet and sour pork
-            </h5>
-            <p class="c-popular-dishes__description">
-              Sweet and Sour Pork Tenderloin is one of the classic cuisines in China. Pork tenderloin is the
-              main
-              material of this dish.
-            </p>
-            <p class="c-popular-dishes__description">
-              The dish tastes sour and sweet, but also crispy outside and soft inside, which can stimulate
-              people’s appetite.
-            </p>
-            <span class="c-popular-dishes__price">$36</span>
-          </div>
-        </div>
-
-        <div class="c-popular-dishes__slide">
-          <div class="c-popular-dishes__image">
-            <img src="<?php echo get_theme_file_uri('/assets/images/food.jpg') ?>" alt="popular dishes">
-          </div>
-          <div class="c-popular-dishes__content">
-            <h5 class="c-popular-dishes__title">
-              Sweet and sour pork
-            </h5>
-            <p class="c-popular-dishes__description">
-              Sweet and Sour Pork Tenderloin is one of the classic cuisines in China. Pork tenderloin is the
-              main
-              material of this dish.
-            </p>
-            <p class="c-popular-dishes__description">
-              The dish tastes sour and sweet, but also crispy outside and soft inside, which can stimulate
-              people’s appetite.
-            </p>
-            <span class="c-popular-dishes__price">$36</span>
-          </div>
-        </div>
+        <?php
+        $rows = get_field('popular_dishes_slider');
+        // var_dump($rows);
+        if ($rows) {
+          foreach ($rows as $row) {
+        ?>
+            <div class="c-popular-dishes__slide">
+              <div class="c-popular-dishes__image">
+                
+                <img src="<?php echo $row['food_picture']; ?>" alt="popular dishes">
+              </div>
+              <div class="c-popular-dishes__content">
+                <h5 class="c-popular-dishes__title">
+                <?php echo $row['food_name']; ?>
+                </h5>
+                <p class="c-popular-dishes__description">
+                <?php echo wpautop($row['food_description']); ?>
+                </p>
+                <span class="c-popular-dishes__price">$<?php echo $row['price']; ?></span>
+              </div>
+            </div>
+        <?php
+          }
+        }
+        ?>
 
       </div>
     </div>
 </section>
+
 <!-- end - Popular Dishes -->
 <?php get_footer(); ?>
